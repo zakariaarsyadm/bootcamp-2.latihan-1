@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  */
 public class BukuDao {
 
-    public void save() throws SQLException {
+    public void save(Buku buku) throws SQLException {
         KoneksiDatabase koneksiDb = new KoneksiDatabase();
         DataSource datasource = koneksiDb.getDataSource();
         Connection connection = datasource.getConnection();
@@ -27,15 +27,15 @@ public class BukuDao {
         String sql = "insert into perpus.buku (judul_buku,tahun_terbit,pengarang,jumlah_buku) values (?,?,?,?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         
-        statement.setString(1, "Belajar Java Coding");
-        statement.setInt(2, 2017);
-        statement.setString(3, "Bandung");
-        statement.setInt(4,4);
+        statement.setString(1, buku.getJudulBuku());
+        statement.setInt(2, buku.getTahunTerbit());
+        statement.setString(3, buku.getPengarang());
+        statement.setInt(4,buku.getJumlahBuku());
         
-        statement.setString(1, "Belajar Memilih");
-        statement.setInt(2, 2013);
-        statement.setString(3, "Jakarta");
-        statement.setInt(4,10);
+//        statement.setString(1, "Belajar Memilih");
+//        statement.setInt(2, 2013);
+//        statement.setString(3, "Jakarta");
+//        statement.setInt(4,10);
         
         statement.executeUpdate();
         statement.close();

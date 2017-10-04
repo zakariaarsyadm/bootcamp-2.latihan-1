@@ -5,9 +5,13 @@
  */
 package com.zakaria.perpus.controller;
 
+import com.zakaria.perpus.dao.BukuDao;
 import com.zakaria.perpus.model.Buku;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -84,6 +88,13 @@ public class BukuAddController extends HttpServlet {
                 Integer.valueOf(req.getParameter("jumlahBuku")));
 //        System.out.println("POST METHOD");
         System.out.println(buku.toString());
+        
+        BukuDao bukuDao = new BukuDao();
+        try {
+            bukuDao.save(buku);
+        } catch (SQLException ex) {
+            Logger.getLogger(BukuAddController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
