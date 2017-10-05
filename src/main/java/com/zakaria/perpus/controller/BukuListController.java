@@ -37,7 +37,7 @@ public class BukuListController extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(BukuListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Buku buku = new Buku();
+//        Buku buku = new Buku();
 
 //        buku.setId(1);
 //        buku.setJudulBuku("Java Programming");
