@@ -5,7 +5,9 @@
  */
 package com.zakaria.perpus.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 /**
@@ -13,6 +15,8 @@ import lombok.Data;
  * @author namhee
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pengunjung {
 
 //    public Integer getId() {

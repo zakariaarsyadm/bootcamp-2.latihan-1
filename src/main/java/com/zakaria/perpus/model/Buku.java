@@ -5,13 +5,17 @@
  */
 package com.zakaria.perpus.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author namhee
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Buku {
     
     private Integer id;
